@@ -26,7 +26,6 @@ public class WikipediaTasteDemo {
 
 
   public static void main(String[] args) throws IOException, TasteException, SAXException, ParserConfigurationException {
-    String recsFile = "src/main/resources/recommendations.txt";
     String docIdsTitle = "src/main/resources/docIdsTitles.xml";
     long userId = 995;
     //Integer neighbors = Integer.parseInt(args[2]);
@@ -41,7 +40,11 @@ public class WikipediaTasteDemo {
 	dataSource.setDatabaseName("se");
 	dataSource.setUser("root");
 	dataSource.setPassword("");
-    
+	dataSource.setCachePreparedStatements(true);
+	dataSource.setCachePrepStmts(true);
+	dataSource.setCacheResultSetMetadata(true);
+	dataSource.setAlwaysSendSetIsolation(false);
+	dataSource.setElideSetAutoCommits(true);
     //create the data model
     DataModel dataModel = new JDBCDataModelImpl(new ConnectionPoolDataSource(dataSource));
     //Create an ItemSimilarity
