@@ -17,9 +17,15 @@
         <pathelement location="lib/junit-3.8.2.jar"/>
         <pathelement location="lib/log4j-1.2.15.jar"/>
         <pathelement location="lib/commons-logging-1.1.1.jar"/>
-        <pathelement location="lib/commons-logging-1.1.1.jar"/>
         <pathelement location="lib/slf4j-api-1.5.6.jar"/>
         <pathelement location="lib/slf4j-jcl-1.5.6.jar"/>
+        <pathelement location="lib/mysql-connector-java-5.1.18-bin.jar"/>
+        <pathelement location="lib/commons-pool-1.4.jar"/>
+        <pathelement location="lib/commons-dbcp-1.2.2.jar"/>
+    </path>
+    <path id="run.WikipediaTasteDemo.classpath">
+        <pathelement location="src/main/assets"/>
+        <path refid="SuggestionEngine.classpath"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -67,7 +73,7 @@
     </target>
     <target name="WikipediaTasteDemo">
         <java classname="demo.wiki.WikipediaTasteDemo" failonerror="true" fork="yes">
-            <classpath refid="SuggestionEngine.classpath"/>
+            <classpath refid="run.WikipediaTasteDemo.classpath"/>
         </java>
     </target>
 </project>

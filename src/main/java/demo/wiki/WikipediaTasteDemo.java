@@ -1,24 +1,27 @@
 package demo.wiki;
 
-import org.apache.mahout.cf.taste.common.TasteException;
-import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
-import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
-import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
-import org.apache.mahout.cf.taste.recommender.RecommendedItem;
-import org.apache.mahout.cf.taste.recommender.ItemBasedRecommender;
-import org.apache.mahout.cf.taste.similarity.ItemSimilarity;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
-//src/main/resources/recommendations.txt  ${user.id}
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.impl.model.jdbc.ConnectionPoolDataSource;
+import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.recommender.ItemBasedRecommender;
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.apache.mahout.cf.taste.similarity.ItemSimilarity;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
+import com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource;
+import com.se.datamodel.JDBCDataModelImpl;
+
 public class WikipediaTasteDemo {
 
 
@@ -34,8 +37,13 @@ public class WikipediaTasteDemo {
     WikiContentHandler handler = new WikiContentHandler();
     sp.parse(is, handler);
 
+    MysqlConnectionPoolDataSource dataSource = new MysqlConnectionPoolDataSource();
+	dataSource.setDatabaseName("se");
+	dataSource.setUser("root");
+	dataSource.setPassword("");
+    
     //create the data model
-    FileDataModel dataModel = new FileDataModel(new File(recsFile));
+    DataModel dataModel = new JDBCDataModelImpl(new ConnectionPoolDataSource(dataSource));
     //Create an ItemSimilarity
     ItemSimilarity itemSimilarity = new LogLikelihoodSimilarity(dataModel);
     //Create an Item Based Recommender
@@ -45,8 +53,6 @@ public class WikipediaTasteDemo {
     List<RecommendedItem> recommendations =
             recommender.recommend(userId, 5);
     TasteUtils.printRecs(recommendations, handler.map);
-    
-    
 
   }
 
