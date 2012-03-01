@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="src" path="mahout-core"/>
+	<classpathentry kind="src" path="mahout-utils"/>
+	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry kind="con" path="/Users/sharadjain/test/Archive/Engine/bin"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/commons-cli-2.0-mahout.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/commons-math-2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/commons-pool-1.6.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/gson-2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/hadoop-0.20.0-core.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/lucene-core-2.9.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/slf4j-api-1.5.6.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/uncommons-maths-1.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/watchmaker-framework-0.5.0.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/Engine/lib/xstream-1.4.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

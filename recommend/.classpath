@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="var" path="JRE_LIB" rootpath="JRE_SRCROOT" sourcepath="JRE_SRC"/>
+	<classpathentry kind="con" path="/Users/sharadjain/test/Archive/recommend/bin"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/commons-cli-2.0-mahout.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/hadoop-0.20.0-core.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/slf4j-jcl-1.5.6.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/mysql-connector-java-5.1.18-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/Engine.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/slf4j-api-1.5.6.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/sharadjain/test/Archive/recommend/lib/commons-pool-1.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
